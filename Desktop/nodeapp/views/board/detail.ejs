@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <%- include ('../header.html')%>
+    <div style="width: 90%; margin: 0 auto; margin-bottom: 50px">
+      <div style="margin-top: 30px">
+        <h2>게시판</h2>
+      </div>
+      <div class="card">
+        <div class="card-header"><%=rows.name%> (<%=rows.wdate%>)</div>
+        <div class="card-body">
+          <h5 class="card-title"><%=rows.title%></h5>
+          <p class="card-text" style="height: 150px"><%=rows.content%></p>
+        </div>
+        <div style="text-align: center">
+          <a href="/board/edit/<%=rows._id%>" class="btn btn-secondary">수정</a>
+          <a href="/board/del/<%=rows._id%>" class="btn btn-danger">삭제</a>
+        </div>
+      </div>
+      <div style="margin-top: 10px; text-align: right">
+        <a class="btn btn-primary" href="/board" role="button">목록</a>
+        <a class="btn btn-primary" href="/board/write" role="button">글 등록</a>
+      </div>
+    </div>
+
+    <%- include ('../footer.html')%>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
