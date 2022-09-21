@@ -1,3 +1,8 @@
 pip install pyinstaller
 
 pyinstaller -F calculator.py //프로그램 파일 생성
+
+pip install requests //url 요청
+pip install beautifulsoup4 // 
+
+pip install openpyxl //엑셀
