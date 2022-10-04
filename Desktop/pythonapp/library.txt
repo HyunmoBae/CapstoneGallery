@@ -17,3 +17,4 @@ pip install paperclip //복사기능
 
 pip install pymysql //python으로 sql연동 설치
 pip install flask //파이썬으로 웹어플리케이션 만드는 웹 프레임워크
+pip install pandas //

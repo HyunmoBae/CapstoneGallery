@@ -1,4 +1,5 @@
 import pymysql
+from pandas import DataFrame
 
 #데이터베이스 연결
 conn = pymysql.connect(host='localhost',
@@ -39,13 +40,22 @@ curs = conn.cursor(pymysql.cursors.DictCursor) #딕셔너리 형태로 결과를
 # conn.close()
 
 #글을 불러내기
-# sql = "select * from user order by name"
+sql = "select * from user order by name"
 
 #명령실행
-# curs.execute(sql)
-# rows = curs.fetchmany(5)
-# print(rows)
-# conn.close()
+curs.execute(sql)
+rows = curs.fetchall() #모든 데이터 가져올때
+#rows = curs.fetchone() #하나의 행만가져옴
+#rows = curs.fetchmany(3) #n개 가져올때
+conn.commit()
+print(rows)
+
+df = DataFrame(rows) 
+
+print(df)
+
+df = df.to_excel("1004.xlsx")
+
 
 #글 수정
 # sql = "update user set phone = %s where name = %s"
@@ -59,6 +69,5 @@ curs = conn.cursor(pymysql.cursors.DictCursor) #딕셔너리 형태로 결과를
 # conn.commit()
 # conn.close()
 
-#연결 닫기
 # for data in curs:
 #     print(data) 
