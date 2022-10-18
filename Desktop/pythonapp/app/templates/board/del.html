@@ -87,70 +87,24 @@
       </div>
     </nav>
 
-    <div id="dcu">
-      <h3>게시판 글쓰기</h3>
-      <form method="post" action="/board/add">
-        <div class="form-group">
-          <label for="exampleFormControlInput1">제목</label>
-          <input
-            name="title"
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="제목을 입력하세요"
-            required
-          />
-        </div>
+    <div id="dcu" style="margin-bottom: 30px">
+      <h3>게시판 글삭제</h3>
+      <form method="post" action="/board/delok">
+        <input type="hidden" name="idx" value="{{ rows[0] }}" />
 
         <div class="form-group">
-          <label for="exampleFormControlInput2">이름</label>
+          <label for="exampleInputPassword1">비밀번호</label>
           <input
-            name="name"
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput2"
-            placeholder="이름을 입력하세요"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlInput3">이메일</label>
-          <input
-            name="email"
-            type="email"
-            class="form-control"
-            id="exampleFormControlInput3"
-            placeholder="이메일을 입력하세요"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1" style="margin-top: 10px"
-            >내용</label
-          >
-          <textarea
-            name="memo"
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="10"
-            required
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlInput4">비밀번호</label>
-          <input
-            style="margin-bottom: 20px"
-            name="pass"
             type="password"
             class="form-control"
-            id="exampleFormControlInput4"
+            id="exampleInputPassword1"
+            name="pass"
             placeholder="비밀번호를 입력하세요"
             required
           />
         </div>
-        <button type="submit" class="btn btn-primary">글 등록</button>
+
+        <button type="submit" class="btn btn-danger">글삭제</button>
       </form>
     </div>
 

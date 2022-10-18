@@ -88,78 +88,50 @@
     </nav>
 
     <div id="dcu">
-      <h3>게시판 글쓰기</h3>
-      <form method="post" action="/board/add">
-        <div class="form-group">
-          <label for="exampleFormControlInput1">제목</label>
-          <input
-            name="title"
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="제목을 입력하세요"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlInput2">이름</label>
-          <input
-            name="name"
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput2"
-            placeholder="이름을 입력하세요"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlInput3">이메일</label>
-          <input
-            name="email"
-            type="email"
-            class="form-control"
-            id="exampleFormControlInput3"
-            placeholder="이메일을 입력하세요"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1" style="margin-top: 10px"
-            >내용</label
-          >
-          <textarea
-            name="memo"
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="10"
-            required
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlInput4">비밀번호</label>
-          <input
-            style="margin-bottom: 20px"
-            name="pass"
-            type="password"
-            class="form-control"
-            id="exampleFormControlInput4"
-            placeholder="비밀번호를 입력하세요"
-            required
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">글 등록</button>
-      </form>
-    </div>
+        <table style="width: 100%; text-align: center">
+          <h3 style="text-align: center">게시판 목록</h3>
+          <tr style="height: 45px; background-color: darkgrey">
+            <th style="color: white; width: 10%">번호</th>
+            <th style="color: white; width: 50%">제목</th>
+            <th style="color: white; width: 15%">이름</th>
+            <th style="color: white; width: 15%">날짜</th>
+            <th style="color: white; width: 10%">조회</th>
+          </tr>
+          {% if rows%} {% for i in rows %}
+          <tr>
+            <td style="text-align: center; height: 40px">{{ i.id}}</td>
+            <td><a href="/board/contents/{{i.id}}">{{ i.title}}</a></td>
+            <td style="text-align: center">{{ i.name }}</td>
+            <td style="text-align: center">{{ i.wdate[0:10] }}</td>
+            <td style="text-align: center">{{ i.hit }}</td>
+          </tr>
+          {% endfor %} {% else %}
+          <tr>
+            <td colspan="5" style="background-color: white; text-align: center">
+              등록된 글이 없습니다!
+            </td>
+          </tr>
+          {% endif %}
+          <tr>
+            <td colspan="5" style="text-align: center">
+              <a class="btn btn-primary" href="/board/write" role="button"
+                >글쓰기</a
+              >
+            </td>
+          </tr>
+        </table>
+      </div>
+  
 
     <div id="footer">
-      <div class="jumbotron jumbotron-fluid" style="height: 70px">
-        <div style="margin-left: 50px">
-          <h5 class="display-4" style="font-size: 20px">대구가톨릭대학교</h5>
-          <p class="lead" style="font-size: 20px">
-            Copyright by Daegu Catholic University, all rights reserved.
+      <div
+        class="jumbotron jumbotron-fluid"
+        style="height: 70px;">
+            <div style="margin-left:50px;">
+              <h5 class="display-4" style="font-size: 20px;">대구가톨릭대학교</h5>
+              <p class="lead" style="font-size: 20px">
+              Copyright by Daegu Catholic University, all rights reserved.
+            </div>
           </p>
         </div>
       </div>

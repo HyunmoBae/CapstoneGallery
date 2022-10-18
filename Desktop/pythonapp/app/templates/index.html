@@ -27,7 +27,7 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">HOME</a>
+      <a class="navbar-brand" href="/">HOME</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -71,12 +71,14 @@
             <a class="nav-link disabled">Disabled</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" method="post" action="/search">
           <input
             class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
+            type="text"
+            placeholder="검색어를 입력하세요"
             aria-label="Search"
+            name="searchstring"
+            required
           />
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
             Search

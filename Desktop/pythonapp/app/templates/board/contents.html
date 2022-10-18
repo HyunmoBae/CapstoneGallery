@@ -88,72 +88,67 @@
     </nav>
 
     <div id="dcu">
-      <h3>게시판 글쓰기</h3>
-      <form method="post" action="/board/add">
-        <div class="form-group">
-          <label for="exampleFormControlInput1">제목</label>
-          <input
-            name="title"
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="제목을 입력하세요"
-            required
-          />
-        </div>
+      <h3>게시판 글보기</h3>
 
-        <div class="form-group">
-          <label for="exampleFormControlInput2">이름</label>
-          <input
-            name="name"
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput2"
-            placeholder="이름을 입력하세요"
-            required
-          />
-        </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">제목</label>
+        <input
+          name="title"
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          value="{{rows[1]}}"
+          disabled
+        />
+      </div>
 
-        <div class="form-group">
-          <label for="exampleFormControlInput3">이메일</label>
-          <input
-            name="email"
-            type="email"
-            class="form-control"
-            id="exampleFormControlInput3"
-            placeholder="이메일을 입력하세요"
-          />
-        </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput2">이름</label>
+        <input
+          name="name"
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput2"
+          value="{{rows[2]}}"
+          disabled
+        />
+      </div>
 
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1" style="margin-top: 10px"
-            >내용</label
-          >
-          <textarea
-            name="memo"
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="10"
-            required
-          ></textarea>
-        </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1" style="margin-top: 10px"
+          >내용</label
+        >
+        <textarea
+          name="memo"
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          disabled
+        >
+{{rows[3]}}
+        </textarea>
+      </div>
 
-        <div class="form-group">
-          <label for="exampleFormControlInput4">비밀번호</label>
-          <input
-            style="margin-bottom: 20px"
-            name="pass"
-            type="password"
-            class="form-control"
-            id="exampleFormControlInput4"
-            placeholder="비밀번호를 입력하세요"
-            required
-          />
-        </div>
-        <button type="submit" class="btn btn-primary">글 등록</button>
-      </form>
+      <div class="form-group">
+        <label for="exampleFormControlInput4">등록일</label>
+        <input
+          style="margin-bottom: 20px"
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput4"
+          value="{{rows[5]}}"
+          disabled
+        />
+      </div>
+      <div style="margin-bottom: 30px">
+        <a class="btn btn-primary" href="/board/write" role="button">글등록</a>
+        <a class="btn btn-primary" href="/board/edit/{{rows[0]}}" role="button"
+          >글수정</a
+        >
+        <a class="btn btn-primary" href="/board/del/{{rows[0]}}" role="button"
+          >글삭제</a
+        >
+      </div>
     </div>
-
     <div id="footer">
       <div class="jumbotron jumbotron-fluid" style="height: 70px">
         <div style="margin-left: 50px">

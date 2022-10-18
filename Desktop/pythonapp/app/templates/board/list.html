@@ -27,7 +27,7 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">HOME</a>
+      <a class="navbar-brand" href="/">HOME</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -71,12 +71,14 @@
             <a class="nav-link disabled">Disabled</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" method="post" action="/search">
           <input
             class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
+            type="text"
+            placeholder="검색어를 입력하세요"
             aria-label="Search"
+            name="searchstring"
+            required
           />
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
             Search
@@ -95,15 +97,17 @@
           <th style="color: white; width: 15%">날짜</th>
           <th style="color: white; width: 10%">조회</th>
         </tr>
-        {% if rows%}
+        {% if rows%} {% for i in rows %}
         <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
+          <td style="text-align: center; height: 40px">{{i[0]}}</td>
+          <td style="text-align: left">
+            <a href="/board/contents/{{ i[0] }}"> {{i[1]}} </a>
+          </td>
+          <td style="text-align: center">{{i[2]}}</td>
+          <td style="text-align: center">{{i[5]}}</td>
+          <td style="text-align: center">{{i[6]}}</td>
         </tr>
-        {% else %}
+        {% endfor %} {% else %}
         <tr>
           <td colspan="5" style="background-color: white; text-align: center">
             등록된 글이 없습니다!
