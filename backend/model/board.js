@@ -1,11 +1,10 @@
 import { Schema, model } from "mongoose";
 
-const GallerySchema = new Schema(
+const BoardSchema = new Schema(
   {
     user: {
       type: String,
       required: true,
-      unique: true, //unique?
     },
     title: {
       type: String,
@@ -29,6 +28,6 @@ const GallerySchema = new Schema(
   { timestamps: true }
 );
 
-const Gallery = model("gallerys", GallerySchema);
+const Board = model("boards", BoardSchema);
 
-export { Gallery };
+export { Board };

@@ -9,6 +9,7 @@ app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/gallery", galleryRouter);
+app.use("/api/board", galleryRouter);
 
 app.listen(5000, () => {
   console.log("backend is running");
