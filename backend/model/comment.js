@@ -1,3 +1,7 @@
 import { Schema, model } from "mongoose";
 
-const commentSchema = aa;
+const commentSchema = new Schema(
+    {
+        
+    }
+);

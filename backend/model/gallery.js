@@ -5,7 +5,6 @@ const GallerySchema = new Schema(
     user: {
       type: String,
       required: true,
-      unique: true, //unique?
     },
     title: {
       type: String,
