@@ -6,6 +6,7 @@ npm install nodemailer // SMTP 메일 발송을 도와줄 라이브러리
 npm install @aws-sdk/client-ses // AWS에서 제공하는 SES SDK
 npm install ejs // ejs를 html로 바꿔줄 라이브러리
 npm install crypto // 랜덤으로 숫자를 생성해 줄 라이브러리 Math.random() 은 암호학적으로 안전한 난수를 제공하지 않으므로, 보안과 관련된 어떤 것에도 이 함수를 사용해서는 안 된다.
+npm install --save multer //이미지 저장
 
 yarn test // 설정해놓은 nodemon명령 실행
 yarn init // 패키지 초기화

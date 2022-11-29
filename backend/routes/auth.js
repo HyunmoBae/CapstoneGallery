@@ -10,7 +10,6 @@ const authRouter = Router();
 authRouter.post("/register", async (req, res) => {
   try {
     await connect(MONGO_URL);
-    console.log("DB")
     const salt = await genSalt(10);
     const hashPassword = await hash(req.body.password, salt);
     const newUser = new User({
