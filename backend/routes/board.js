@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { connect, deleteModel } from "mongoose";
+import { connect } from "mongoose";
 import { Board } from "../model/board.js";
 import { MONGO_URL } from "../setting.js";
 
