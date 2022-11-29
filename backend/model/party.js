@@ -29,4 +29,4 @@ const PartySchema = new Schema ({
 
 const Party = model("partys", PartySchema)
 
-export { Party }
+export { Party };

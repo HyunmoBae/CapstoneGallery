@@ -1,6 +1,6 @@
 import { Router } from "express"
 import { connect } from "mongoose"
-import { Party } from "../models/party.js"
+import { Party } from "../model/party.js"
 import { MONGO_URL } from "../setting.js";
 
 const partyRouter = Router()
