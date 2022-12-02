@@ -6,6 +6,7 @@ import { galleryRouter } from "./routes/gallery.js";
 import { userRouter } from "./routes/user.js";
 import { partyRouter } from "./routes/party.js";
 import { imageRouter } from "./routes/image.js";
+import { commentRouter } from "./routes/comment.js";
 
 const app = express();
 app.use(express.json());
@@ -19,6 +20,7 @@ app.use("/api/gallery", galleryRouter);
 app.use("/api/board", boardRouter);
 app.use("/api/party", partyRouter);
 app.use("/api/image", imageRouter);
+app.use("/api/comment", commentRouter);
 
 app.listen(5000, () => {
   console.log("backend is running");
